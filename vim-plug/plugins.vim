@@ -16,7 +16,16 @@ call plug#begin('~/.config/nvim/plugins')
     " Auto pairs for '(' '[' '{'
     Plug 'jiangmiao/auto-pairs'
 
-    " Dracula Theme
+    " vim-floatterm
+    Plug 'voldikss/vim-floaterm'
+
+    "vim which key
+    Plug 'liuchengxu/vim-which-key'
+
+    " CoC
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+    "Dracula Theme
     Plug 'dracula/vim', { 'as': 'dracula' }
 
     " Airline
@@ -24,3 +33,9 @@ call plug#begin('~/.config/nvim/plugins')
     Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
+
+" Automatically insatll missing plugins at startuo
+autocmd VimEnter *
+  \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \|   PlugInstall --sync | q
+  \| endif
