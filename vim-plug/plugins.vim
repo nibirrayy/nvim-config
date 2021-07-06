@@ -16,4 +16,11 @@ call plug#begin('~/.config/nvim/plugins')
     " Auto pairs for '(' '[' '{'
     Plug 'jiangmiao/auto-pairs'
 
+    " Dracula Theme
+    Plug 'dracula/vim', { 'as': 'dracula' }
+
+    " Airline
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+
 call plug#end()
